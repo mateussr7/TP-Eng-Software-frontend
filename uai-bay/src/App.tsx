@@ -1,12 +1,15 @@
-import React from 'react';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 function App() {
   return (
-    <div>
-      so falta programar sabosta
-    </div>
-  );
+    <React.StrictMode>
+      <Router>
+        <div>aaaa</div>
+      </Router>
+    </React.StrictMode>
+  )
 }
 
 export default App;
