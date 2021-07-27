@@ -1,12 +1,14 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import LoginPage from './pages/login'
 
 function App() {
   return (
     <React.StrictMode>
       <Router>
-        <div>aaaa</div>
+        <Switch>
+          <Route path="" component={LoginPage}/>
+        </Switch>
       </Router>
     </React.StrictMode>
   )
