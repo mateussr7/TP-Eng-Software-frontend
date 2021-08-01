@@ -32,6 +32,7 @@ export const useStyles = makeStyles((theme) => ({
     loginLabel: {
         fontFamily: 'Helvetica',
         fontSize: '40px',
+        color: 'primary'
     },
     labelDiv: {
         display: 'flex',
@@ -42,6 +43,7 @@ export const useStyles = makeStyles((theme) => ({
         margin: '10px'
     },
     button: {
-        width: '80%'
+        width: '80%',
+        marginBottom: '2px'
     }
 }))

@@ -17,14 +17,14 @@ export interface User {
 
 export interface UserDTO {
     id?: number
-    name: string
+    name?: string
     email: string
     password: string
-    telephone: string
-    isAdmin: boolean
-    inTrash: boolean
-    exclude: boolean
-    logged: boolean
+    telephone?: string
+    isAdmin?: boolean
+    inTrash?: boolean
+    exclude?: boolean
+    logged?: boolean
 }
 
 export enum UserActions {

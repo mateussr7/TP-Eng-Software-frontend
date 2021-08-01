@@ -1,6 +1,9 @@
-import { Button, Grid, TextField, Typography } from '@material-ui/core'
+import { Button, Grid, IconButton, InputAdornment, OutlinedInput, Link,TextField, Typography } from '@material-ui/core'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import React, { FC, useState } from 'react'
 import { useStyles } from './styles'
+
 
 interface LoginProps {
 
@@ -10,6 +13,7 @@ const LoginPage: FC<LoginProps> = () => {
     const classes = useStyles()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [passVisibility, setPassVisibility] = useState<boolean>(true)
 
     function handleEmailChange(value: string){
         setEmail(value)
@@ -17,6 +21,15 @@ const LoginPage: FC<LoginProps> = () => {
 
     function handlePasswordChange(value: string){
         setPassword(value)
+    }
+
+    function handlePassVisibility(){
+        setPassVisibility(!passVisibility)
+    }
+
+    function getTextFieldType(): string {
+        if(!passVisibility) return "text"
+        else return "password"
     }
 
     return (
@@ -38,14 +51,23 @@ const LoginPage: FC<LoginProps> = () => {
                     placeholder="E-mail"
                     className={classes.textFieldStyle}
                 />
-                <TextField 
+                <OutlinedInput
                     value={password}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => handlePasswordChange(event.target.value as string)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePasswordChange(e.target.value as string)}
                     color="primary"
-                    variant="outlined"
                     placeholder="Password"
-                    type="password"
+                    type={getTextFieldType()}
                     className={classes.textFieldStyle}
+                    endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                                onClick={handlePassVisibility}
+                                edge="end"
+                            >
+                                {passVisibility ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                        </InputAdornment>
+                    }
                 />
                 <Button
                     color="primary"
@@ -53,6 +75,11 @@ const LoginPage: FC<LoginProps> = () => {
                     className={classes.button}
                 >
                     Login
+                </Button>
+                <Button
+                    
+                >
+                    <Link href="/signup"> or Sign Up</Link>
                 </Button>
             </div>
         </Grid>

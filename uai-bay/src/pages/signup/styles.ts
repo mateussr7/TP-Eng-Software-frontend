@@ -26,7 +26,23 @@ export const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         border: '1px solid #E5E2E1',
         borderRadius: '5px',
-        height: '40%',
-        width: '40%'
-    }
+        height: '50%',
+        width: '50%'
+    },
+    signupLabel: {
+        fontFamily: 'Helvetica',
+        fontSize: '40px',
+        color: 'primary'
+    },
+    labelDiv: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    button: {
+        width: '80%'
+    },
+    textFieldStyle: {
+        width: '80%',
+        margin: '10px'
+    },
 }))
