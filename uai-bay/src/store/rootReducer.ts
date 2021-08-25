@@ -1,9 +1,15 @@
-import { combineReducers } from "redux"
-import userReducer from "./User"
+import { combineReducers } from 'redux'
+import userReducer from './User'
+import productReducer from './Products'
+import employeeReducer from './Employee'
+import { saleReducer } from './Sales'
 
 
 const rootReducer = combineReducers({
-    userReducer
+    userReducer,
+    productReducer,
+    employeeReducer,
+    saleReducer
 })
 
 

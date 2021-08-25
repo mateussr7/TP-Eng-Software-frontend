@@ -10,3 +10,10 @@ export async function loginService(userDTO: UserDTO): Promise<User> {
 
     return response
 }
+
+export async function fetchUsersList(): Promise<User[]> {
+    const URL = getWebServiceURL('/user/list')
+    const response: User[] = await axios.get(URL)
+
+    return response
+}
